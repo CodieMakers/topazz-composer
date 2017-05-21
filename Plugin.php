@@ -11,6 +11,7 @@ namespace Topazz\Composer;
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
+use Topazz\Composer\Installer as TopazzInstaller;
 
 class Plugin implements PluginInterface {
 
@@ -21,6 +22,7 @@ class Plugin implements PluginInterface {
      * @param IOInterface $io
      */
     public function activate(Composer $composer, IOInterface $io) {
-        // TODO: Implement activate() method.
+        $installer = new TopazzInstaller($io, $composer);
+        $composer->getInstallationManager()->addInstaller($installer);
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "topazz/composer",
-  "description": "Simple Composer installer for Topazz",
+  "description": "Simple custom Composer installer for Topazz",
   "type": "composer-plugin",
   "minimum-stability": "stable",
   "license": "MIT",
