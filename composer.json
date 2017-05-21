@@ -1,0 +1,27 @@
+{
+  "name": "topazz/composer",
+  "description": "Simple Composer installer for Topazz",
+  "type": "composer-plugin",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lukáš Krotovič",
+      "email": "lukas@krotovic.cz"
+    }
+  ],
+  "extra": {
+    "class": "Topazz\\Composer\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "Topazz\\Composer\\": "./"
+    }
+  },
+  "require": {
+    "composer-plugin-api": "^1.0"
+  },
+  "require-dev": {
+    "composer/composer": "1.4.*"
+  }
+}
