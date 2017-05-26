@@ -14,10 +14,14 @@ use Composer\Package\PackageInterface;
 class Installer extends LibraryInstaller {
 
     public function getInstallPath(PackageInterface $package) {
-        return "modules/" . explode("/", $package->getPrettyName())[1];
+        $prefix = "modules/";
+        if ($package->getType() === "topazz-theme") {
+            $prefix = "themes/";
+        }
+        return $prefix . explode("/", $package->getPrettyName())[1];
     }
 
     public function supports($packageType) {
-        return 'topazz-module' === $packageType;
+        return preg_match('/topazz-(module|theme)/', $packageType);
     }
 }
